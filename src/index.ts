@@ -1,6 +1,6 @@
 declare global {
   interface Array<T> {
-    awaitEach(
+    waitEach(
       callback: (item: T, index: number, array: T[]) => Promise<void> | void
     ): Promise<void>;
   }
@@ -22,14 +22,14 @@ declare global {
  *
  * @example
  * const numbers = [1, 2, 3];
- * await awaitEach(numbers, async (num) => {
+ * await waitEach(numbers, async (num) => {
  *   await new Promise(resolve => setTimeout(resolve, 500));
  *   console.log(num);
  * });
  *
  * console.log('Done!');
  */
-export async function awaitEach<T>(
+export async function waitEach<T>(
   array: T[],
   callback: (item: T, index: number, array: T[]) => Promise<void> | void
 ): Promise<void> {
@@ -39,17 +39,17 @@ export async function awaitEach<T>(
 }
 
 /**
- * Installs the `awaitEach` method on the `Array` prototype.
- * After calling this function, all arrays will have the `awaitEach` method available:
+ * Installs the `waitEach` method on the `Array` prototype.
+ * After calling this function, all arrays will have the `waitEach` method available:
  *
  * @example
- * import { install } from 'awaiteach';
+ * import { install } from 'waitEach';
  *
  * // Install the method globally
  * install();
  *
  * const numbers = [1, 2, 3];
- * await numbers.awaitEach(async (num) => {
+ * await numbers.waitEach(async (num) => {
  *   await new Promise(resolve => setTimeout(resolve, 500));
  *   console.log(num);
  * });
@@ -59,5 +59,5 @@ export async function awaitEach<T>(
  * @returns {void} This function does not return anything.
  */
 export const install = () => {
-  Array.prototype.awaitEach = awaitEach as any;
+  Array.prototype.waitEach = waitEach as any;
 };

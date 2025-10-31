@@ -1,6 +1,6 @@
 {
   "name": "waiteach",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "description": "A modern async forEach utility for JavaScript/TypeScript.",
   "main": "src/index.ts",
   "module": "dist/index.esm.js",

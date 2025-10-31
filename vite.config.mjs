@@ -10,7 +10,7 @@ export default defineConfig({
   build: {
     lib: {
       entry: resolve(__dirname, 'src/index.ts'),
-      name: 'awaiteach',
+      name: 'waitEach',
       fileName: (format) => `index.${format}.js`,
       formats: ['es', 'cjs', 'umd']
     },

@@ -1,6 +1,6 @@
 declare global {
     interface Array<T> {
-        awaitEach(callback: (item: T, index: number, array: T[]) => Promise<void> | void): Promise<void>;
+        waitEach(callback: (item: T, index: number, array: T[]) => Promise<void> | void): Promise<void>;
     }
 }
 /**
@@ -19,26 +19,26 @@ declare global {
  *
  * @example
  * const numbers = [1, 2, 3];
- * await awaitEach(numbers, async (num) => {
+ * await waitEach(numbers, async (num) => {
  *   await new Promise(resolve => setTimeout(resolve, 500));
  *   console.log(num);
  * });
  *
  * console.log('Done!');
  */
-export declare function awaitEach<T>(array: T[], callback: (item: T, index: number, array: T[]) => Promise<void> | void): Promise<void>;
+export declare function waitEach<T>(array: T[], callback: (item: T, index: number, array: T[]) => Promise<void> | void): Promise<void>;
 /**
- * Installs the `awaitEach` method on the `Array` prototype.
- * After calling this function, all arrays will have the `awaitEach` method available:
+ * Installs the `waitEach` method on the `Array` prototype.
+ * After calling this function, all arrays will have the `waitEach` method available:
  *
  * @example
- * import { install } from 'awaiteach';
+ * import { install } from 'waitEach';
  *
  * // Install the method globally
  * install();
  *
  * const numbers = [1, 2, 3];
- * await numbers.awaitEach(async (num) => {
+ * await numbers.waitEach(async (num) => {
  *   await new Promise(resolve => setTimeout(resolve, 500));
  *   console.log(num);
  * });
