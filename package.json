@@ -1,0 +1,36 @@
+{
+  "name": "awaiteach",
+  "version": "1.0.1",
+  "description": "A modern async forEach utility for JavaScript/TypeScript.",
+  "main": "src/index.ts",
+  "module": "dist/index.esm.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "vite build"
+  },
+  "devDependencies": {
+    "path": "^0.12.7",
+    "typescript": "^5.9.3",
+    "url": "^0.11.4",
+    "vite": "^7.1.12",
+    "vite-plugin-dts": "^4.5.4"
+  },
+  "keywords": [
+    "async",
+    "foreach",
+    "forEach",
+    "await",
+    "loop",
+    "iteration",
+    "utility"
+  ],
+  "author": "senior-debugger",
+  "license": "MIT",
+  "files": [
+    "dist"
+  ],
+  "engines": {
+    "node": ">=18"
+  },
+  "repository": " "
+}
