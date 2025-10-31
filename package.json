@@ -1,5 +1,5 @@
 {
-  "name": "awaiteach",
+  "name": "waiteach",
   "version": "1.0.1",
   "description": "A modern async forEach utility for JavaScript/TypeScript.",
   "main": "src/index.ts",
@@ -30,7 +30,7 @@
     "dist"
   ],
   "engines": {
-    "node": ">=18"
+    "node": ">=14"
   },
-  "repository": " "
+  "repository": "https://github.com/senior-debugger/waiteach"
 }
