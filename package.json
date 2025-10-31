@@ -1,17 +1,22 @@
 {
   "name": "waiteach",
-  "version": "1.1.0",
+  "version": "1.1.3",
   "description": "A modern async forEach utility for JavaScript/TypeScript.",
-  "main": "src/index.ts",
-  "module": "dist/index.esm.js",
+  "main": "dist/index.cjs.js",
+  "module": "dist/index.es.js",
   "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.es.js",
+      "require": "./dist/index.cjs.js"
+    }
+  },
   "scripts": {
     "build": "vite build"
   },
   "devDependencies": {
-    "path": "^0.12.7",
     "typescript": "^5.9.3",
-    "url": "^0.11.4",
     "vite": "^7.1.12",
     "vite-plugin-dts": "^4.5.4"
   },
