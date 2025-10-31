@@ -1,2 +1,2 @@
-"use strict";Object.defineProperty(exports,Symbol.toStringTag,{value:"Module"});async function a(i,e){for(let t=0;t<i.length;t++)await e(i[t],t,i)}const l=()=>{Array.prototype.waitEach=a};exports.install=l;exports.waitEach=a;
+"use strict";Object.defineProperty(exports,Symbol.toStringTag,{value:"Module"});async function n(i,t){for(let a=0;a<i.length;a++)await t(i[a],a,i)}const e=()=>{Array.prototype.waitEach=async function(i){for(let t=0;t<this.length;t++)await i(this[t],t,this)}};exports.install=e;exports.waitEach=n;
 //# sourceMappingURL=index.cjs.js.map

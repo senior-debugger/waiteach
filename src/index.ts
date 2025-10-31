@@ -59,5 +59,12 @@ export async function waitEach<T>(
  * @returns {void} This function does not return anything.
  */
 export const install = () => {
-  Array.prototype.waitEach = waitEach as any;
+  Array.prototype.waitEach = async function <T>(
+    this: T[],
+    callback: (item: T, index: number, array: T[]) => Promise<void> | void
+  ): Promise<void> {
+    for (let i = 0; i < this.length; i++) {
+      await callback(this[i], i, this);
+    }
+  };
 };
